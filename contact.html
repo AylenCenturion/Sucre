@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sucré patisserie</title>
+    <link rel="stylesheet" href="assets/style.css">
+<script src="https://kit.fontawesome.com/9300187746.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="pageContent">
+      <!-- Header -->
+      <div class="backHeader">
+          <header>
+              <div class="logoHeader">
+                <img src="./assets/Sucre logo.png" alt="Sucré Patisserie">
+              </div>
+              <nav>
+                <div class="navegationMenu">
+                  <input type="checkbox" id="checkBurger">
+                  <label for="checkBurger" class="burger">
+                    <i class="fa-solid fa-bars"></i>
+                  </label>
+                  <ul class="navMenu brownNavMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a class="active" href="contact.html">Contact</a></li>
+                    <li><a href="stores.html">Stores</a></li>
+                  </ul>
+                </div>
+                <div class="accountMenu">
+                  <input type="checkbox" id="checkUser">
+                  <label for="checkUser" class="userLogo">
+                    <i class="fa-regular fa-user"></i>
+                  </label>
+                  <ul class="userNav brownUserMenu">
+                    <li><a href="login.html">Log in</a></li>
+                    <div class="userNavDivider"></div>
+                    <li><a href="signin.html">Sign in</a></li>
+                  </ul>
+                </div>
+              </nav>
+          </header>
+      </div>
+      <!-- Header end-->
+
+      <!--Hero-->
+      <div class="sideHeros">
+        <h2>Contact us</h2>
+      </div>
+      <!--Hero ends-->
+
+      <!-- Section -->
+      <section class="sideSection contactUser">
+        <div class="introText">
+          <p>To budget your event, share your experience or give us suggestions.</p>
+        </div>
+        <form class="contactForm">
+          <input type="text" class="contactUserData" placeholder="Enter your name" name="name" required>
+          <input type="email" class="contactUserData" placeholder="Enter your email adress" name="email" required>
+          <input type="text" class="contactUserData" placeholder="Enter your phone" name="phone">
+        </form>
+        <div class="messageBox">
+          <textarea type="text" class="messageText" placeholder="Your message..."
+          name="message" required></textarea>
+        </div>
+        <div class="formBtn">
+          <button type="button" class="sideBtn"><span>Send</span></button>
+        </div>
+      </section>
+      <!-- Section ends -->
+
+      <!--Footer-->
+      <section class="backFooter">
+        <div class="footerContainer">
+          <div class="footer">
+            <div class="footerLogo">
+              <img src="./assets/Sucre logo.png" alt="Sucre logo">
+            </div>
+            <div class="footerSections">
+              <div class="footerContact">
+                <div class="footerTitle">
+                  <p>Contact</p>
+                </div>
+                <div class="mail">
+                  <i class="fa-solid fa-envelope"></i>
+                  <p>sucre@gmail.com</p>
+                </div>
+                <div class="phone">
+                  <i class="fa-solid fa-phone"></i>
+                  <ul>
+                    <li>+549 11 15415415</li>
+                    <li>+549 11 15615615</li>
+                    <li>+549 11 15815815</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footerNav">
+                <div class="footerTitle">Navegate</div>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="products.html">Products</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                  <li><a href="stores.html">Stores</a></li>
+                </ul>
+              </div>
+              <div class="footerSubscribe">
+                <div class="footerTitle">Subscribe</div>
+                <p>Stay up to date with our latest news</p>
+                <div class="subscribe">
+                  <input type="text" class="subscribeInput" placeholder="Type your mail">
+                  <div class="send">
+                    <i class="fa-solid fa-paper-plane"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footerMap">
+              <img src="./assets/map.png" alt="Map location">
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="socialMedia">
+            <ul>
+              <li><i class="fa-brands fa-facebook"></i></li>
+              <li><i class="fa-brands fa-twitter"></i></li>
+              <li><i class="fa-brands fa-instagram"></i></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Footer ends -->
+  </div>
+</body>
