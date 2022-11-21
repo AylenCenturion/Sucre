@@ -11,38 +11,102 @@
 <body>
   <div class="pageContent">
       <!-- Header -->
-      <div class="backHeader">
-          <header>
-              <div class="logoHeader">
-                <img src="./assets/Sucre logo.png" alt="Sucré Patisserie">
+      <div class="backHeader brownBackHeader">
+        <header>
+          <div class="logoHeader">
+            <img src="./assets/Sucre logo.png" alt="Sucré Patisserie">
+          </div>
+          <div class="naveg">
+            <div class="navegationMenu">
+              <input type="checkbox" id="checkBurger">
+              <label for="checkBurger" class="burger">
+                <i class="fa-solid fa-bars"></i>
+              </label>
+              <ul class="navMenu brownNavMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="stores.html">Stores</a></li>
+              </ul>
+            </div>
+    
+            <nav>
+              <div class="userLogo">
+                <i class="fa-solid fa-user"></i>
               </div>
-              <nav>
-                <div class="navegationMenu">
-                  <input type="checkbox" id="checkBurger">
-                  <label for="checkBurger" class="burger">
-                    <i class="fa-solid fa-bars"></i>
-                  </label>
-                  <ul class="navMenu brownNavMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="stores.html">Stores</a></li>
-                  </ul>
+              <ul class="userNav brownUserMenu">
+                <li><a href="login.html">Log in</a></li>
+                <li><a href="signin.html">Sign in</a></li>
+              </ul>
+    
+              <div class="cartLogo">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+              <div class="cart brownCart"> 
+                <div class="topCart">
+                  <h4 class="cartTitle">My products</h4>
+                  <div class="close-cart close-brown-cart"> 
+                    <p>x</p>
+                  </div>
                 </div>
-                <div class="accountMenu">
-                  <input type="checkbox" id="checkUser">
-                  <label for="checkUser" class="userLogo">
-                    <i class="fa-regular fa-user"></i>
-                  </label>
-                  <ul class="userNav brownUserMenu">
-                    <li><a href="login.html">Log in</a></li>
-                    <div class="userNavDivider"></div>
-                    <li><a href="signin.html">Sign in</a></li>
-                  </ul>
+    
+                <div class="shoppingList">
+                  <!-- <div class="product">
+                    <div class="cart-prod-img">
+                      <img src=${} alt=""/>
+                    </div>
+                    <div class="product-data">
+                      <p>${name}</p>
+                      <span>${price}</span>
+                    </div>
+                    <div class="quantity-regulator">
+                      <button class="quantity-handler down" data-id=${id}>-</button>
+                      <p class="item-quantity">${quantity}</p>
+                      <button class="quantity-handler up" data-id=${id}>+</button>
+                    </div>
+                  </div>                            -->
+                  <div class="product">
+                    <div class="cart-prod-img">
+                      <img src="assets/gallery/strawberry & chocolat cake.png" alt=""/>
+                    </div>
+                    <div class="product-data">
+                      <p>Chocotorta con frutillas</p>
+                      <span>$10000</span>
+                    </div>
+                    <div class="quantity-regulator">
+                      <button class="quantity-handler brown-quantity-handler down" data-id=${id}>-</button>
+                      <p class="item-quantity">8</p>
+                      <button class="quantity-handler brown-quantity-handler up" data-id=${id}>+</button>
+                    </div>
+                  </div>         
                 </div>
-              </nav>
-          </header>
-      </div>
+                <div class="cartCount">
+                  <div class="deliveryLine">
+                    <p>Subtotal:</p>
+                    <p class="subtotal">${subtotal}</p>
+                  </div>
+                  <div class="deliveryLine">
+                    <p>Delivery:</p>
+                    <p>Free</p>
+                  </div>
+                  <div class="cartDivider"></div>
+                  <div class="deliveryLine">
+                    <h3>Total:</h3>
+                    <span class="total">${total}</span>
+                  </div>
+                </div>
+                <div class="cartBottom">
+                  <button class="buyBtn cartBtn brownCartBtn">BUY</button>
+                  <button class="deleteBtn cartBtn  brownCartBtn">DELETE CART</button>
+                  <p><a href="login.html">Log in</a> to shop</p>
+                </div>
+              </div>
+            </nav>
+          </div>
+          
+        </header>
+        <div class="blur"></div> 
+        </div>
       <!-- Header end-->
       
       <!--Hero-->
@@ -131,3 +195,4 @@
       <!-- Footer ends -->
   </div>
 </body>
+<script src="index.js"></script>

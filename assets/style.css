@@ -45,7 +45,7 @@
 }
 
 .backHeader{
-    background-color: var(--brown);
+    background-color: var(--black);
     width: 100%;
     position: sticky;
     top: 0;
@@ -55,9 +55,13 @@
     z-index: 3;
 }
 
+.brownBackHeader{
+    background-color: var(--brown);
+}
+
 .logoHeader{
     max-width: 150px;
-    min-width: 110px;
+    min-width: 90px;
     width: 14%;
     z-index: 4;
 }
@@ -75,20 +79,26 @@ header{
     padding: 10px 30px;
 }
 
-nav, .userNav{
+.naveg{
     display: flex;
     align-items: center;
-    gap: 40px;
+    justify-content: space-between;
+    width: 60%;
 }
 
-.burger, .userLogo{
-    font-size: 28px;
+nav{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.burger, .userLogo, .cartLogo{
+    font-size: 24px;
     color: white;
     cursor: pointer;
 }
 
-#checkBurger:checked ~ .navMenu,
-#checkUser:checked ~ .userNav{
+#checkBurger:checked ~ .navMenu{
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -101,15 +111,18 @@ nav, .userNav{
     text-align: center;
 }
 
-#checkBurger:checked ~ .brownNavMenu,
-#checkUser:checked ~ .brownUserMenu{
+#checkBurger:checked ~ .brownNavMenu{
     background-color: var(--brown);
 }
 
-.navMenu li, .userNav li{
+.navMenu li{
     display: none;
     line-height: 115px;
     transition: all .4s;
+}
+
+.userNav{
+    line-height: 90px;
 }
 
 .navMenu li a, .userNav li a{
@@ -117,52 +130,294 @@ nav, .userNav{
     font-size: 22px;
 }
 
-.userNav li a{
-    font-weight: 700;
-}
-
-.navMenu li a.active, .navMenu li a:hover{
+.navMenu li a.active, .navMenu li a:hover, .userNav li:hover{
     transition: .1s;
     font-weight: 600;
 } 
 
-.userNav li a:hover{
-    transition: .1s;
-    font-weight: 800;
-}
-
-#checkBurger, #checkUser{
+#checkBurger{
     display: none;
 }
 
-#checkBurger:checked ~ .navMenu li, 
-#checkUser:checked ~ .userNav li{
+#checkBurger:checked ~ .navMenu li{
     display: block;
 }
 
-.userNavDivider{
-    display: none;
-    width: 1px;
-    height: 30px;
+.userNav, .cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--black);
+    z-index: 6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-items: center;
+    width:290px;
+    gap: 15px;
+    max-height: 100vh;
+    transition: all .4s ease-in;
+    transform: translate(150%);
+    padding: 22px;
+    border-bottom-left-radius:8px;
+    box-shadow: 5px 5px 20px rgba(255, 255, 255, 20%),-5px -5px 20px rgba(255, 255, 255, 20%);
+}
+
+.userNav{
+    justify-content: center;
+}
+
+.brownUserMenu, .brownCart{
+    background-color: var(--brown);
+}
+
+.cart{
+    min-height: 40vh;
+}
+
+.open-cart{
+    transition: all .3s ease-in-out;
+    transform: translate(0);
+}
+
+.open-menu{
+    transition: all .3s ease-in-out;
+    transform: translate(0);
+}
+
+.see-blur{
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: #ffffff00;
+    z-index: 5;
+    position: absolute;
+}
+
+.see-blur::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+
+}
+
+.topCart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    width: 100%;
+}
+
+.cartTitle{
+    font-size: 22px;
+}
+
+.close-cart, .quantity-handler{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.quantity-handler{
+    width: 15px;
+    height: 15px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.close-brown-cart, .brown-quantity-handler{
+    color: var(--brown);
+}
+
+.close-cart p{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.cartCount{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.deliveryLine{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.deliveryLine p{
+    font-size: 13px;
+    color: #fff;
+}
+
+.deliveryLine h3{
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+.deliveryLine span, .item-quantity{
+    font-size: 700;
+    font-size: 15px;
+    color: #fff;
+}
+
+.cartDivider{
+    height: 1px;
+    width: 100%;
     background-color: #fff;
 }
 
+.cartBottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cartBottom p{
+    font-size: 14px;
+    color: #fff;
+}
+
+.cartBottom p a{
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.cartBtn{
+    padding: 5px;
+    width: 170px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    color: var(--black);
+    transition: all .2s ease-in;
+}
+
+.brownCartBtn{
+    color: var(--brown);
+}
+
+.cartBtn:hover, .close-cart:hover, .quantity-handler:hover{
+    background-color: var(--black);
+    color: #fff;
+}
+
+.brownCartBtn:hover, .close-brown-cart:hover, .brown-quantity-handler:hover{
+    background-color: var(--brown);
+    color: #fff;
+}
+
+.disabled{
+    background-color: var(--lightGrey);
+    cursor: none;
+}
+
+.shoppingList{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.shoppingList p{
+    color: #fff;
+}
+
+.product{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #fff;
+    border-radius: 7px;
+    padding: 8px;
+    width: 100%;
+}
+
+.product-data{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100px;
+}
+
+.quantity-regulator{
+    display: flex;
+    gap: 7px;
+}
+
+.cart-prod-img{
+    height: 50px;
+    width: 50px;
+}
+
+.cart-prod-img img{
+    width: 100%;
+    height: 100%;
+}
+.product-data p{
+    font-size: 15px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.product-data span{
+    font-size: 15px;
+    color: #fff;
+    font-weight: 400;
+}
+
+@media screen and ( max-width: 900px){
+    .naveg{
+        width: auto;
+        gap: 20px;
+    }
+    .burger, .userLogo, .cartLogo{
+        font-size: 20px;
+    }
+}
+@media screen and ( max-width: 350px){
+    .userNav, .cart{
+        width: 100%;
+        height: 80vh;
+        border-bottom-left-radius: 0px;
+    }
+}
 @media screen and ( min-width: 900px){
-    .burger, .userLogo{
+    .burger{
         display: none;
     }
-    .navMenu li, .userNav li, .userNavDivider{
+    .navMenu li{
         display: block;
     }
 
-    .navMenu, .userNav{
+    .navMenu{
         position: relative;
         display: flex;
         gap: 20px;
     }
 
-    .userNav{
-        gap: 10px;
+    nav{
+        gap: 40px;
     }
 }
 /*headers end*/
@@ -500,9 +755,9 @@ h4{
     }
 }
 
-@media screen and ( max-width: 600px){
+@media screen and ( max-width: 555px){
     .logInHome, .signInHome{
-        height: 25vh;
+        height: 20vh;
     }
 }
 /*home section 4 ends*/
@@ -568,34 +823,33 @@ h6{
     align-items: center;
     gap: 3vh;
     margin: 0 auto;
-    padding: 5vh 5vw;
+    padding: 5vh 7vw;
     position: relative; 
 }
 
-.productsCategorie{
+.mostPopular{
     display: flex;
     flex-direction: column;
-    gap: 20px 40px;
-    max-width: 1400px;
-    width: 90vw;
+    padding: 0px 0px 40px;
+    gap: 10px;
+    width: 90%;
 }
 
-.productTitle{
+.categories{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    width: 80%;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.productTitle a span{
-    font-weight: 600;
-    font-size: clamp (20px, 4vw, 25px);
-    color: var(--darkerGrey);
-    cursor: pointer;
-}
-
-.productTitle a span:hover{
-    font-weight: 700;
-    color: black;
+.productsContainer{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .productsDisplay{
@@ -610,13 +864,15 @@ h6{
     display: flex;
     flex-direction: column;
     gap: 7px;
-    flex: 1 1 200px;
+    flex: 1 1 220px;
     align-items: center;
-    padding: 20px 0px;
+    padding: 10px 0px;
 }
 
 .productItem img{
     max-width: 190px;
+    /* min-width: 150px; */
+    width: 80%;
 }
 
 .productData{
@@ -629,66 +885,23 @@ h6{
 }
 
 .productName{
-    font-size: clamp (17px, 4vw, 23px);
     font-weight: 500;
+    height: 25px;
 }
 
-.cart{
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 1px solid var(--mediumGrey);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+.addBtn{
+    border: 1px solid #00000036;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px;
+    margin: 5px;
+    width: 120px;
 }
 
-.cart i{
-    font-size: 22px;
-    color: var(--darkGrey);
+.addBtn:hover{
+    background-color: var(--darkGrey);
 }
 
-.cart i:hover{
-    font-size: 24px;
-}
-
-.moreProducts{
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    background-color: var(--lightGrey);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.productItem:last-child{
-    min-width: 150px;
-    padding: 15px 0px;
-}
-
-.moreProducts i{
-    font-size: 60px;
-    color: #fff;
-}
-
-.moreProducts i:hover{
-    font-size: 68px;
-    transition-duration: .3s;
-}
-
-@media screen and (max-width: 1388px) and (min-width: 923px){
-    .secondToLast{
-        display: none;
-    }
-}
-
-@media screen and (max-width: 1156px) and (min-width: 923px){
-    .middleItem{
-        display: none;
-    }
-}
 /*products sections ends*/
 
 /*contact section*/
@@ -762,6 +975,7 @@ input::placeholder, textarea::placeholder{
     transition-duration: .5s;
     transition-timing-function: linear;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .sideBtn::before{
@@ -787,9 +1001,17 @@ input::placeholder, textarea::placeholder{
     color: #fff;
 }
 
-.sideBtn:focus{
+.category:focus, .categoryActive{
     background-color: var(--brown);
     color: #fff;
+}
+
+.moreBtn{
+    width: 220px;
+}
+
+.hidden{
+    display: none;
 }
 
 @media screen and ( max-width: 700px){
@@ -913,6 +1135,13 @@ input::placeholder, textarea::placeholder{
     cursor: pointer;
 }
 /*log in & sign in section ends*/
+
+/*products buttons fixed*/
+.category{
+    width: 130px;
+    font-size: 19px;
+    font-weight: 500;
+}
 
 /*footer*/
 .backFooter{

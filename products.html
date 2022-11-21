@@ -1,47 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sucré patisserie</title>
-    <link rel="stylesheet" href="assets/style.css">
-<script src="https://kit.fontawesome.com/9300187746.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sucré patisserie</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://kit.fontawesome.com/9300187746.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="pageContent">
-      <!-- Header -->
-      <div class="backHeader">
-          <header>
-              <div class="logoHeader">
-                <img src="./assets/Sucre logo.png" alt="Sucré Patisserie">
+    <!-- Header -->
+    <div class="backHeader brownBackHeader">
+      <header>
+        <div class="logoHeader">
+          <img src="./assets/Sucre logo.png" alt="Sucré Patisserie">
+        </div>
+        <div class="naveg">
+          <div class="navegationMenu">
+            <input type="checkbox" id="checkBurger">
+            <label for="checkBurger" class="burger">
+              <i class="fa-solid fa-bars"></i>
+            </label>
+            <ul class="navMenu brownNavMenu">
+              <li><a href="index.html">Home</a></li>
+              <li><a class="active" href="products.html">Products</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="stores.html">Stores</a></li>
+            </ul>
+          </div>
+  
+          <nav>
+            <div class="userLogo">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <ul class="userNav brownUserMenu">
+              <li><a href="login.html">Log in</a></li>
+              <li><a href="signin.html">Sign in</a></li>
+            </ul>
+  
+            <div class="cartLogo">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="cart brownCart"> 
+              <div class="topCart">
+                <h4 class="cartTitle">My products</h4>
+                <div class="close-cart close-brown-cart"> 
+                  <p>x</p>
+                </div>
               </div>
-              <nav>
-                <div class="navegationMenu">
-                  <input type="checkbox" id="checkBurger">
-                  <label for="checkBurger" class="burger">
-                    <i class="fa-solid fa-bars"></i>
-                  </label>
-                  <ul class="navMenu brownNavMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a class="active" href="products.html">Products</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="stores.html">Stores</a></li>
-                  </ul>
+  
+              <div class="shoppingList">
+                <!-- <div class="product">
+                  <div class="cart-prod-img">
+                    <img src="${img}" alt=${name}/>
+                  </div>
+                  <div class="product-data">
+                    <p>${name}</p>
+                    <span>$${price}</span>
+                  </div>
+                  <div class="quantity-regulator">
+                    <button class="quantity-handler down" data-id='${id}'>-</button>
+                    <p class="item-quantity">${quantity}</p>
+                    <button class="quantity-handler up" data-id='${id}'>+</button>
+                  </div>
+                </div>    -->
+              </div>
+              <div class="cartCount">
+                <div class="deliveryLine">
+                  <p>Subtotal:</p>
+                  <p class="subtotal">${subtotal}</p>
                 </div>
-                <div class="accountMenu">
-                  <input type="checkbox" id="checkUser">
-                  <label for="checkUser" class="userLogo">
-                    <i class="fa-regular fa-user"></i>
-                  </label>
-                  <ul class="userNav brownUserMenu">
-                    <li><a href="login.html">Log in</a></li>
-                    <div class="userNavDivider"></div>
-                    <li><a href="signin.html">Sign in</a></li>
-                  </ul>
+                <div class="deliveryLine">
+                  <p>Delivery:</p>
+                  <p>Free</p>
                 </div>
-              </nav>
-          </header>
+                <div class="cartDivider"></div>
+                <div class="deliveryLine">
+                  <h3>Total:</h3>
+                  <span class="total">${total}</span>
+                </div>
+              </div>
+              <div class="cartBottom">
+                <button class="buyBtn cartBtn brownCartBtn">BUY</button>
+                <button class="deleteBtn cartBtn  brownCartBtn">DELETE CART</button>
+                <p><a href="login.html">Log in</a> to shop</p>
+              </div>
+            </div>
+          </nav>
+        </div>
+        
+      </header>
+      <div class="blur"></div> 
       </div>
       <!-- Header end-->
       
@@ -53,196 +103,51 @@
 
       <!-- Section -->
       <section class="sideSection">
-        <div class="productsCategorie">
-          <div class="productTitle">
-            <h3>Cakes</h3>
-            <a href="#"><span>More cakes!</span></a>
+        <div class="mostPopular">
+          <div class="categorieTitle">
+            <h3>Most popular</h3>
           </div>
-          <div class="productsDisplay">
-            <div class="productItem">
-              <img src="assets/gallery/strawberry & chocolat cake.png" alt="Strawberry & chocolat cake">
-              <div class="productData">
-                <p class="productName">Strawberry & chocolat cake</p>
-                <p class="productPrice">$3000</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem">
-              <img src="assets/gallery/drip cake.png" alt="Drip cake">
-              <div class="productData">
-                <p class="productName">Drip cake</p>
-                <p class="productPrice">$3500</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem">
-              <img src="assets/gallery/nuts cake.png" alt="Nuts cake">
-              <div class="productData">
-                <p class="productName">Nuts cake</p>
-                <p class="productPrice">$3000</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem middleItem">
-              <img src="assets/gallery/oreo cake.png" alt="Oreo cake">
-              <div class="productData">
-                <p class="productName">Oreo cake</p>
-                <p class="productPrice">$3000</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem secondToLast">
-              <img src="assets/gallery/chocolat mousse cake.png" alt="Chocolat mousse cake">
-              <div class="productData">
-                <p class="productName">Chocolat mousse cake</p>
-                <p class="productPrice">$3200</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem">
-              <div class="moreProducts">
-                <a href="#"><i class="fa-solid fa-angle-right"></i></a>
-              </div>
-            </div>
+          <div class="productsDisplay popularProducts">
           </div>
         </div>
 
-        <div class="productsCategorie">
-          <div class="productTitle">
-            <h3>Cupcakes</h3>
-            <a href="#"><span>More cupcakes!</span></a>
-          </div>
-          <div class="productsDisplay">
-            <div class="productItem">
-              <img src="assets/gallery/chocolat cupcake.png" alt="Chocolat cupcake">
-              <div class="productData">
-                <p class="productName">Chocolat cupcake</p>
-                <p class="productPrice">$250</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem">
-              <img src="assets/gallery/red velvet cupcake.png" alt="Red velvet cupcake">
-              <div class="productData">
-                <p class="productName">Red velvet cupcake</p>
-                <p class="productPrice">$250</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem">
-              <img src="assets/gallery/lemon cupcake.png" alt="Lemon cupcake">
-              <div class="productData">
-                <p class="productName">Lemon cupcake</p>
-                <p class="productPrice">$250</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem middleItem">
-              <img src="assets/gallery/berry cupcake.png" alt="Berry cupcake">
-              <div class="productData">
-                <p class="productName">Berry cupcake</p>
-                <p class="productPrice">$250</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem secondToLast">
-              <img src="assets/gallery/strawberry cupcake.png" alt="Strawberry cupcake">
-              <div class="productData">
-                <p class="productName">Strawberry cupcake</p>
-                <p class="productPrice">$250</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem">
-              <div class="moreProducts">
-                <a href="#"><i class="fa-solid fa-angle-right"></i></a>
-              </div>
-            </div>
-          </div>
+        <div class="categories">
+          <button class="category sideBtn categoryActive">All</button>
+          <button class="category sideBtn" data-category="cakes">Cakes</button>
+          <button class="category sideBtn" data-category="cupcakes">Cupcakes</button>
+          <button class="category sideBtn" data-category="loafCakes">Loaf cakes</button>
+          <button class="category sideBtn" data-category="others">Others</button>
         </div>
+        <!-- le puse la clase active pero no la use, fijarse si js la necesita sino chau -->
+<!-- 
+        <div class="productsContainer">
+          <div class="productItem">
+            <img src=${img} alt=${name}>
+            <div class="productData">
+              <p class="productName">${name}</p>
+              <p class="productPrice">$${price}</p>
+              <button class="cartBtn addBtn" 
+                data-id='${id}' 
+                data-name='${name}'
+                data-price='${price}'
+                data-img='${img}'
+                >Add to cart</button>
+            </div>
+          </div>
+        </div> -->
 
-        <div class="productsCategorie">
-          <div class="productTitle">
-            <h3>Others</h3>
-            <a href="#"><span>See more!</span></a>
+
+
+
+
+
+
+
+        <div class="productsContainer">
+          <div class="productsDisplay allProducts">
+           
           </div>
-          <div class="productsDisplay">
-            <div class="productItem">
-              <img src="assets/gallery/chocolat cookies.png" alt="Chocolat cookies">
-              <div class="productData">
-                <p class="productName">Chocolat cookies</p>
-                <p class="productPrice">6x$400</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem">
-              <img src="assets/gallery/vegan cookies.png" alt="Vegan cookies">
-              <div class="productData">
-                <p class="productName">Vegan cookies</p>
-                <p class="productPrice">6x$400</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem">
-              <img src="assets/gallery/chocolat madeleines.png" alt="Chocolat madeleines">
-              <div class="productData">
-                <p class="productName">Chocolat madeleines</p>
-                <p class="productPrice">3x$350</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem middleItem">
-              <img src="assets/gallery/lemon madeleines.png" alt="Lemon madeleines">
-              <div class="productData">
-                <p class="productName">Lemon madeleines</p>
-                <p class="productPrice">3x$350</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem secondToLast">
-              <img src="assets/gallery/8 macarons.png" alt="Macarons">
-              <div class="productData">
-                <p class="productName">Macarons</p>
-                <p class="productPrice">8x2500</p>
-                <div class="cart">
-                  <i class="fa-brands fa-opencart"></i>
-                </div>
-              </div>
-            </div>
-            <div class="productItem">
-              <div class="moreProducts">
-                <a href="#"><i class="fa-solid fa-angle-right"></i></a>
-              </div>
-            </div>
-          </div>
+          <button class="sideBtn moreBtn"> See more</button>
         </div>
 
       </section>
@@ -294,7 +199,7 @@
               </div>
             </div>
             <div class="footerMap">
-              <img src="./assets/map.png" alt="Map location">
+              <!-- <img src="./assets/map.png" alt="Map location"> -->
             </div>
           </div>
           <div class="divider"></div>
@@ -309,4 +214,6 @@
       </section>
       <!-- Footer ends -->
   </div>
+  <script src="data.js"></script>
+<script src="index.js"></script>
 </body>
