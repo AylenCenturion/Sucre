@@ -172,6 +172,14 @@ const renderCartProduct = (cartProduct) => {
     </div>`;
 }
 
+const disabledBtn = (btn) => {
+    if (!cart.length) {
+        btn.classList.add ('disabled')
+        return
+    }
+    btn.classList.remove ('disabled')
+}
+
 const renderCart = () => {
     if(!cart.length){
         productsCart.innerHTML = `<p>The cart is empty</p>`;
@@ -220,8 +228,8 @@ const checkCartState = () => {
     saveLocalStorage(cart)
     renderCart(cart)
     showTotal(cart)
-    buyBtn.classList.remove('disabled')
-    deleteBtn.classList.remove('disabled')
+    disabledBtn(buyBtn)
+    disabledBtn(deleteBtn)
 }
 
 const showSuccessModal = (msg) => {
@@ -310,6 +318,8 @@ const init = () => {
     popularProducts.addEventListener("click", addProducts)
     productsCart.addEventListener("click", handlerQuantity)
     deleteBtn.addEventListener("click", deleteCart);
+    disabledBtn(buyBtn)
+    disabledBtn(deleteBtn)
 } 
 
 init();
