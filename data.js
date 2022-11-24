@@ -36,7 +36,7 @@ const productsData = [
     name: "Strawberry & chocolat cake",
     price: 3000,
     category: "cakes",
-    popular: true,
+    popular: false,
     img:"assets/gallery/strawberry & chocolat cake.png",
   },
   {
@@ -218,7 +218,7 @@ const productsData = [
   {
     id: 28,
     name: "Pistachio loaf cake",
-    price: 800,
+    price: 600,
     category: "loafCakes",
     popular: true,
     img:"assets/gallery/pistachio loaf cake.png",

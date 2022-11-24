@@ -92,36 +92,13 @@ nav{
     gap: 20px;
 }
 
-.burger, .userLogo, .cartLogo{
+.burgerLogo, .userLogo, .cartLogo{
     font-size: 24px;
     color: white;
     cursor: pointer;
 }
 
-#checkBurger:checked ~ .navMenu{
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top:107px;
-    right: 0;
-    background-color: #14100f;
-    transition: all .4s;
-    text-align: center;
-}
-
-#checkBurger:checked ~ .brownNavMenu{
-    background-color: var(--brown);
-}
-
-.navMenu li{
-    display: none;
-    line-height: 115px;
-    transition: all .4s;
-}
-
-.userNav{
+.userNav, .navMenu{
     line-height: 90px;
 }
 
@@ -135,15 +112,7 @@ nav{
     font-weight: 600;
 } 
 
-#checkBurger{
-    display: none;
-}
-
-#checkBurger:checked ~ .navMenu li{
-    display: block;
-}
-
-.userNav, .cart{
+.userNav, .navMenu, .cart{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -155,39 +124,31 @@ nav{
     align-items: center;
     width:290px;
     gap: 15px;
-    max-height: 100vh;
     transition: all .4s ease-in;
     transform: translate(150%);
-    padding: 22px;
+    padding: 50px 22px;
     border-bottom-left-radius:8px;
     box-shadow: 5px 5px 20px rgba(255, 255, 255, 20%),-5px -5px 20px rgba(255, 255, 255, 20%);
 }
 
-.userNav{
+.userNav, .navMenu{
     justify-content: center;
+    line-height: 115px;
+    padding: 90px 0px;
 }
 
-.brownUserMenu, .brownCart{
+.brownUserMenu, .brownCart, .brownNavMenu{
     background-color: var(--brown);
 }
 
-.cart{
-    min-height: 40vh;
-}
-
-.open-cart{
-    transition: all .3s ease-in-out;
-    transform: translate(0);
-}
-
-.open-menu{
+.open-cart, .open-menu, .open-burger{
     transition: all .3s ease-in-out;
     transform: translate(0);
 }
 
 .see-blur{
     width: 100vw;
-    height: 100vh;
+    height: 150vh;
     left: 0;
     top: 0;
     background-color: #ffffff00;
@@ -215,7 +176,7 @@ nav{
     font-size: 22px;
 }
 
-.close-cart, .quantity-handler{
+.close-cart{
     width: 20px;
     height: 20px;
     border-radius: 5px;
@@ -229,15 +190,23 @@ nav{
     transition: all .2s ease-in;
 }
 
-.quantity-handler{
-    width: 15px;
-    height: 15px;
-    font-size: 17px;
-    font-weight: 500;
+.close-brown-cart{
+    color: var(--brown);
 }
 
-.close-brown-cart, .brown-quantity-handler{
-    color: var(--brown);
+.quantity-handler{
+    width: 16px;
+    height: 16px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #726556;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .close-cart p{
@@ -314,19 +283,20 @@ nav{
     color: var(--brown);
 }
 
-.cartBtn:hover, .close-cart:hover, .quantity-handler:hover{
+.cartBtn:hover, .close-cart:hover{
     background-color: var(--black);
     color: #fff;
 }
 
-.brownCartBtn:hover, .close-brown-cart:hover, .brown-quantity-handler:hover{
+.brownCartBtn:hover, .close-brown-cart:hover{
     background-color: var(--brown);
     color: #fff;
 }
 
-.disabled{
-    background-color: var(--lightGrey);
-    cursor: none;
+.disabled, .disabled:hover{
+    color: var(--mediumGrey);
+    background-color: #fff;
+    cursor: auto;
 }
 
 .shoppingList{
@@ -391,36 +361,52 @@ nav{
         width: auto;
         gap: 20px;
     }
-    .burger, .userLogo, .cartLogo{
+    .userLogo, .cartLogo{
         font-size: 20px;
     }
 }
 @media screen and ( max-width: 350px){
-    .userNav, .cart{
+    .userNav, .cart, .navMenu{
         width: 100%;
-        height: 80vh;
         border-bottom-left-radius: 0px;
     }
 }
 @media screen and ( min-width: 900px){
-    .burger{
+    .burgerLogo{
         display: none;
     }
-    .navMenu li{
-        display: block;
-    }
-
     .navMenu{
-        position: relative;
-        display: flex;
-        gap: 20px;
+        transform: translate(0);
+        flex-direction: row;
+        position: static;
+        box-shadow: none;
+        transition: none;
     }
-
-    nav{
-        gap: 40px;
+    .navMenu{
+        padding: 10px;        
     }
 }
-/*headers end*/
+
+.successModal{
+    padding: 12px;
+    background-color: var(--brown);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    transform: translateY(200%);
+    transition: all .4s ease-in;
+    width: 100%;
+}
+
+.activeModal{
+    transform: translateY(0);
+    transition: all .4s ease-in;
+}
+
+/*headers ends*/
 
 /*home hero*/
 .backHomeHero{
