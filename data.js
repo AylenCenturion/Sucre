@@ -89,14 +89,6 @@ const productsData = [
   },
   {
     id: 12,
-    name: "Strawberry cupcake",
-    price: 250,
-    category: "cupcakes",
-    popular: false,
-    img:"assets/gallery/Strawberry cupcake.png",
-  },
-  {
-    id: 13,
     name: "Vainilla chips loaf cake",
     price: 600,
     category: "loafCakes",
@@ -104,7 +96,7 @@ const productsData = [
     img:"assets/gallery/vainilla chips loaf cake.png",
   },
   {
-    id: 14,
+    id: 13,
     name: "Oreo cupcake",
     price: 250,
     category: "cupcakes",
@@ -112,12 +104,20 @@ const productsData = [
     img:"assets/gallery/oreo cupcake.png",
   },
   {
-    id: 15,
+    id: 14,
     name: "Vegan cookies",
     price: 400,
     category: "others",
     popular: true,
     img:"assets/gallery/vegan cookies.png",
+  },
+  {
+    id: 15,
+    name: "Berry cupcake",
+    price: 250,
+    category: "cupcakes",
+    popular: false,
+    img:"assets/gallery/berry cupcake.png",
   },
   {
     id: 16,
@@ -222,14 +222,6 @@ const productsData = [
     category: "loafCakes",
     popular: true,
     img:"assets/gallery/pistachio loaf cake.png",
-  },
-  {
-    id: 29,
-    name: "Berry cupcake",
-    price: 250,
-    category: "cupcakes",
-    popular: false,
-    img:"assets/gallery/berry cupcake.png",
   },
 
 ]

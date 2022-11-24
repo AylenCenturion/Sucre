@@ -802,7 +802,7 @@ h6{
 /*home section 5 ends*/
 
 /*products section*/
-.sideSection{
+.productsSection{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -891,8 +891,23 @@ h6{
 /*products sections ends*/
 
 /*contact section*/
+.sideSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
 .contactUser{
     max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
 }
 
 .introText p{
@@ -1016,7 +1031,7 @@ input::placeholder, textarea::placeholder{
 .storesSection{
     max-width: 1400px;
     padding: 6vh 4vh;
-    gap: 7vh;
+    gap: 10vh;
 }
 
 .store{
@@ -1098,8 +1113,14 @@ input::placeholder, textarea::placeholder{
 /*stores section ends*/
 
 /*log in & sign in section*/
+
 .formContainer{
-    max-width: 400px;
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .inputForm{
@@ -1134,6 +1155,7 @@ input::placeholder, textarea::placeholder{
     background-color: var(--black);
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .footerContainer{
@@ -1148,8 +1170,8 @@ input::placeholder, textarea::placeholder{
 
 .footer{
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 35px;
     padding: 15px;
