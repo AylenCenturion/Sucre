@@ -16,7 +16,7 @@
     --mediumGrey: #0000008a;
     --darkGrey: #000000d4;
     --darkerGrey: #000000e0;
-
+    --red:#b80000;
 }
 
 .pageContent{
@@ -118,6 +118,7 @@ nav{
     justify-content: space-around;
     background-color: var(--black);
     z-index: 6;
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -125,7 +126,6 @@ nav{
     width:290px;
     gap: 15px;
     transition: all .4s ease-in;
-    transform: translate(150%);
     padding: 50px 22px;
     border-bottom-left-radius:8px;
     box-shadow: 5px 5px 20px rgba(255, 255, 255, 20%),-5px -5px 20px rgba(255, 255, 255, 20%);
@@ -143,12 +143,13 @@ nav{
 
 .open-cart, .open-menu, .open-burger{
     transition: all .3s ease-in-out;
-    transform: translate(0);
+    display: flex;
 }
 
 .see-blur{
-    width: 100vw;
+    width: 100%;
     height: 150vh;
+    content: "";
     left: 0;
     top: 0;
     background-color: #ffffff00;
@@ -182,7 +183,7 @@ nav{
     border-radius: 5px;
     background-color: #fff;
     border: 1px solid #fff;
-    color: var(--black);
+    color: #473f35;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -190,16 +191,12 @@ nav{
     transition: all .2s ease-in;
 }
 
-.close-brown-cart{
-    color: var(--brown);
-}
-
 .quantity-handler{
     width: 16px;
     height: 16px;
     font-size: 17px;
     font-weight: 500;
-    color: #726556;
+    color: #473f35;
     border-radius: 5px;
     background-color: #fff;
     border: 1px solid #fff;
@@ -277,10 +274,6 @@ nav{
     border-radius: 8px;
     color: var(--black);
     transition: all .2s ease-in;
-}
-
-.brownCartBtn{
-    color: var(--brown);
 }
 
 .cartBtn:hover, .close-cart:hover{
@@ -381,6 +374,7 @@ nav{
         position: static;
         box-shadow: none;
         transition: none;
+        display: flex;
     }
     .navMenu{
         padding: 10px;        
@@ -558,7 +552,7 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     padding: 5px;
     max-width: 1400px;
     background-color: var(--brown);
@@ -1132,7 +1126,7 @@ input::placeholder, textarea::placeholder{
 }
 
 .formContainer p{
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .formContainer a{

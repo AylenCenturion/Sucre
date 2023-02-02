@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sucré patisserie</title>
+    <title>Sucré patisserie / login</title>
     <link rel="stylesheet" href="assets/style.css">
 <script src="https://kit.fontawesome.com/9300187746.js" crossorigin="anonymous"></script>
 </head>
@@ -52,6 +52,21 @@
                 <div class="shoppingList">
 
                 </div>
+                <div class="cartCount">
+                  <div class="deliveryLine">
+                    <p>Subtotal:</p>
+                    <p class="subtotal">${subtotal}</p>
+                  </div>
+                  <div class="deliveryLine">
+                    <p>Delivery:</p>
+                    <p>Free</p>
+                  </div>
+                  <div class="cartDivider"></div>
+                  <div class="deliveryLine">
+                    <h3>Total:</h3>
+                    <span class="total">${total}</span>
+                  </div>
+                </div>
                 <div class="cartBottom">
                   <button class="buyBtn cartBtn brownCartBtn">BUY</button>
                   <button class="deleteBtn cartBtn  brownCartBtn">DELETE CART</button>
@@ -74,14 +89,14 @@
 
       <!-- Section -->
       <section class="sideSection">
-        <form class="formContainer">
+        <form class="formContainer" id="login-form">
           <div class="inputForm">
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter your email adress" name="email" required>
+            <input type="email" id="user-email" placeholder="Enter your email adress" name="email" required>
           </div>
           <div class="inputForm">
             <label for="password">Password</label>
-            <input type="password" id="password" required>
+            <input type="password" id="user-password" required>
             <p>Forgot your password?</p>
           </div>
           <button type="button" class="sideBtn"><span>Log in</span></button>
@@ -151,5 +166,6 @@
       </section>
       <!-- Footer ends -->
   </div>
+  <script src="data.js"></script>
+  <script src="index.js"></script>
 </body>
-<script src="index.js"></script>
