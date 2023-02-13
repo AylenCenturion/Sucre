@@ -13,12 +13,19 @@ const cartCount = document.querySelector(".cartCount");
 const cartBottom = document.querySelector(".cartBottom");
 const total = document.querySelector(".total");
 const subtotal = document.querySelector(".subtotal");
+const successModal = document.querySelector(".successModal");
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 const saveLocalStorage = (cartList) => {
     localStorage.setItem('cart', JSON.stringify(cartList))
 };
+
+let users = JSON.parse(localStorage.getItem('users')) || [];
+
+const saveToLocalStorage = (usersList) => {
+  localStorage.setItem('users', JSON.stringify(usersList));
+}
 
 //cart-header
 
@@ -44,9 +51,14 @@ const closeCart = () => {
   backBlur.classList.remove("see-blur");
 }
 
-const logInAlert = () => {
-    if(users.length) return
-  alert("Please log in to complete the purchase");
+const buyFuntion = () => {
+    if(!users.length){
+      alert("Please log in to complete the purchase");
+    }else if (window.confirm ("Wish to buy cart")){
+        cart = []
+        checkCartState()
+    }
+  
 }
 
 //cart function
@@ -175,6 +187,14 @@ const deleteCart = () => {
     }
 }
 
+const showSuccessModal = (msg) => {
+    successModal.classList.add('activeModal');
+    successModal.textContent = msg;
+    setTimeout (() => {
+        successModal.classList.remove('activeModal');
+    }, 1800)
+}
+
 const init = () => {
     userBtn.addEventListener("click", toggleMenu);
     cartBtn.addEventListener("click", toggleCart);
@@ -182,7 +202,7 @@ const init = () => {
     window.addEventListener("scroll", closeCart);
     backBlur.addEventListener("click", closeCart);
     closeCartBtn.addEventListener("click", closeCart)
-    buyBtn.addEventListener("click", logInAlert)
+    buyBtn.addEventListener("click", buyFuntion)
     window.addEventListener("load", renderCart)
     window.addEventListener("load", showTotal)
     productsCart.addEventListener("click", handlerQuantity)

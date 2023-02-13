@@ -77,8 +77,9 @@
           </div>
         </header>
         <div class="blur"></div> 
-        </div>
-        <!-- Header end-->
+        <div class="successModal"></div> 
+      </div>
+      <!-- Header end-->
       
       <!--Hero-->
       <div class="sideHeros">
@@ -88,29 +89,44 @@
 
       <!-- Section -->
       <section class="sideSection">
-        <form class="formContainer" id="sign-in-form">
+        <form class="formContainer" novalidate id="sign-in-form">
           <div class="inputForm">
             <label for="name">Name *</label>
-            <input type="text" id="name" placeholder="Enter your name" name="name" required>
+            <div class="input-box">
+              <input type="text" id="name" placeholder="Enter your name" name="name" required>
+              <small></small>
+            </div>
           </div>
           <div class="inputForm">
             <label for="email">Email *</label>
-            <input type="email" id="email" placeholder="Enter your email adress" name="email" required>
+            <div class="input-box">
+              <input type="email" id="email" placeholder="Enter your email adress" name="email" required>
+              <small></small>
+            </div>
           </div>
           <div class="inputForm">
             <label for="phone">Phone</label>
-            <input type="text" id="phone" placeholder="Enter your phone" name="phone">
+            <div class="input-box">
+              <input type="text" id="phone" placeholder="Enter your phone" name="phone">
+              <small></small>
+            </div>
           </div>
           <div class="inputForm">
             <label for="password">Password *</label>
-            <input type="password" id="password" required>
+            <div class="input-box">
+              <input type="password" id="password" required>
+              <small></small>
+            </div>
           </div>
           <div class="inputForm">
             <label for="password">Confirm password *</label>
-            <input type="password" id="confirmPassword" required>
+            <div class="input-box">
+              <input type="password" id="confirmPassword" required>
+              <small></small>
+            </div>
             <span>* Required field</span>
           </div>
-          <button type="button" class="sideBtn"><span>Sign in</span></button>
+          <button class="sideBtn"><span>Sign in</span></button>
           <p>Already have an account? <a href="login.html">Log in</a></p>          
         </form>
       </section>
@@ -179,4 +195,6 @@
   </div>
   <script src="data.js"></script>
   <script src="index.js"></script>
+  <script src="utils.js"></script>
+  <script src="signinform.js"></script>
 </body>

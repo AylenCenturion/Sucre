@@ -4,7 +4,6 @@ const categories = document.querySelector(".categories");
 const categoriesList = document.querySelectorAll(".category");
 const moreBtn = document.querySelector(".moreBtn");
 const addBtn = document.querySelector(".addBtn");
-const successModal = document.querySelector(".successModal");
 
 const renderProduct = (product) => {
   const {id, name, price, img} = product;
@@ -100,14 +99,6 @@ const showMoreProducts =() => {
 }
 
 //add products
-
-const showSuccessModal = (msg) => {
-  successModal.classList.add('activeModal');
-  successModal.textContent = msg;
-  setTimeout (() => {
-      successModal.classList.remove('activeModal');
-  }, 1600)
-}
 
 const addProducts = (e) => {
   if(!e.target.classList.contains('addBtn')) return;
