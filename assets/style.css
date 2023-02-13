@@ -1221,6 +1221,10 @@ small{
     gap: 8px;
 }
 
+.mail a{
+    color: #fff;
+}
+
 .subscribe{
     display: flex;
     justify-content: space-between;
@@ -1244,6 +1248,13 @@ small{
     font-size: 22px;
 
     animation:plane 2s ease-in infinite 0s alternate;
+}
+
+.subscribe small{
+    position: absolute;
+    bottom: -7px;
+    color: #fff;
+    font-size: 10px;
 }
 
 @keyframes plane{

@@ -14,6 +14,9 @@ const cartBottom = document.querySelector(".cartBottom");
 const total = document.querySelector(".total");
 const subtotal = document.querySelector(".subtotal");
 const successModal = document.querySelector(".successModal");
+const subscribeInput = document.querySelector(".subscribeInput");
+const plane = document.querySelector(".send");
+
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -192,7 +195,22 @@ const showSuccessModal = (msg) => {
     successModal.textContent = msg;
     setTimeout (() => {
         successModal.classList.remove('activeModal');
-    }, 1800)
+    }, 2000)
+}
+
+const sendFooterEmail = () => {
+    const textError = subscribeInput.parentElement.querySelector("small");
+
+    const email = subscribeInput.value.trim();
+    if(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)){
+        showSuccessModal ("Email sent");
+        subscribeInput.value = '';
+    } else{
+        textError.textContent = 'The email is not valid';
+        setTimeout (() => {
+            textError.textContent = '';
+        }, 2000)
+    }
 }
 
 const init = () => {
@@ -209,6 +227,7 @@ const init = () => {
     deleteBtn.addEventListener("click", deleteCart);
     disabledBtn(buyBtn)
     disabledBtn(deleteBtn)
+    plane.addEventListener("click", sendFooterEmail)
 } 
 
 init();
