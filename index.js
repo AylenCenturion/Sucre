@@ -55,6 +55,7 @@ const closeCart = () => {
 }
 
 const buyFuntion = () => {
+    if(!cart.length) return
     if(!users.length){
       alert("Please log in to complete the purchase");
     }else if (window.confirm ("Wish to buy cart")){
@@ -200,8 +201,8 @@ const showSuccessModal = (msg) => {
 
 const sendFooterEmail = () => {
     const textError = subscribeInput.parentElement.querySelector("small");
-
     const email = subscribeInput.value.trim();
+    
     if(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)){
         showSuccessModal ("Email sent");
         subscribeInput.value = '';
